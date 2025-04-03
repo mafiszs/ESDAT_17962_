@@ -56,5 +56,24 @@ namespace listaenlazadaS
 
             return listaVag;
         }
+        public void EliminarUltimo()
+        {
+            if(this.Primero == null) //Caso1: La lista estam vacia
+            {
+                return;
+            }
+            if(this.Primero.sig == null)//Caso2: Solo hay un vagón
+            {
+                this.Primero = null;
+                return;
+            }
+
+            Vagon tmp = this.Primero;
+            while (tmp != null)
+            {
+                tmp = tmp.sig;
+            }
+            tmp.sig = null;
+        }
     }
 }
