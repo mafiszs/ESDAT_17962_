@@ -44,7 +44,7 @@ namespace listaenlazadaS
                 tmp.sig = nuevo;
             }
         }
-        public string VerVagones ()
+        public string VerVagones()
         {
             string listaVag = "";
             Vagon tmp = this.Primero;
@@ -69,11 +69,41 @@ namespace listaenlazadaS
             }
 
             Vagon tmp = this.Primero;
-            while (tmp != null)
+            while (tmp.sig.sig != null)
             {
                 tmp = tmp.sig;
             }
             tmp.sig = null;
         }
+
+        public int largo()
+        {
+            
+            return 0;
+        }
+        public int GetValor(int pos)
+        {
+            
+            return 0;
+        }
+        public void AgregaLEFinal(Locomotora otro)
+        {
+
+        }
+        public bool ExisteValor(int valor)
+        {
+            Vagon tmp = this.Primero;
+            while (tmp != null)
+            {
+                if(tmp.Dato == valor)
+                {
+                    return true;
+                }
+                tmp = tmp.sig;
+
+            }
+            return false;
+        }
+        
     }
 }
